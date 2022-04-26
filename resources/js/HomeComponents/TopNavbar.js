@@ -9,11 +9,11 @@ export default function TopNavbar() {
                 <div className="dtr-header-left p-0">
 
                     <Link className="logo-default dtr-scroll-link" href="/">
-                        <img width="150px" src="/assets/images/logo-dark.png" alt="logo" />
+                        <img width="150px" src="/assets/images/logo-dark.png" alt="logo"/>
                     </Link>
 
                     <Link className="logo-alt dtr-scroll-link" href="/">
-                        <img width="150px" src="/assets/images/logo-dark.png" alt="logo" />
+                        <img width="150px" src="/assets/images/logo-dark.png" alt="logo"/>
                     </Link>
 
                     {/* logo on scroll ends */}
