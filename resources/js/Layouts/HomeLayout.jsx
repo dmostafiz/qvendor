@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TopNavbar from '../HomeComponents/TopNavbar';
 
-export default function HomeLayout({ children }) {
+export default function HomeLayout({auth, children }) {
+
+    useEffect(()=>{
+        console.log('Current Auth: ', auth)
+    }, [])
     return (
         <>
-            <div id="ac-wrapper">
+            {/* <div id="ac-wrapper">
                 <div id="popup">
                     <div className="popup-content">
                         <div className="popup-body">
@@ -15,7 +19,7 @@ export default function HomeLayout({ children }) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             <div id="dtr-wrapper" className="clearfix">

@@ -13,11 +13,12 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .react()
-    .sass('resources/css/app.scss', 'public/css', [
-        // require('postcss-import'),
-        // require('tailwindcss'),
-        // require('autoprefixer'),
+    .css('resources/css/tailwind.css', 'public/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
     ])
+    .sass('resources/css/app.scss', 'public/css')
     .alias({
         '@': 'resources/js',
     });

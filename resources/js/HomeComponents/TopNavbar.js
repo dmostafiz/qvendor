@@ -7,10 +7,15 @@ export default function TopNavbar() {
             <div className="d-flex align-items-center justify-content-between">
                 {/* header left starts */}
                 <div className="dtr-header-left">
-                    {/* logo */}
-                    <a className="logo-default dtr-scroll-link" href="#home"><img src="assets/images/logo-dark.png" alt="logo" /></a>
-                    {/* logo on scroll */}
-                    <a className="logo-alt dtr-scroll-link" href="#home"><img src="assets/images/logo-dark.png" alt="logo" /></a>
+
+                    <Link className="logo-default dtr-scroll-link" href="/">
+                        <img src="assets/images/logo-dark.png" alt="logo" />
+                    </Link>
+
+                    <Link className="logo-alt dtr-scroll-link" href="/">
+                        <img src="assets/images/logo-dark.png" alt="logo" />
+                    </Link>
+
                     {/* logo on scroll ends */}
                 </div>
                 {/* header left ends */}
@@ -18,11 +23,9 @@ export default function TopNavbar() {
                 <div className="main-navigation">
                     <ul className="sf-menu dtr-nav dark-nav-on-load dark-nav-on-scroll">
                         <li>
-                            <a className="nav-link" href="#home">
+                            <a className="nav-link" href="/">
                             </a>
                         </li>
-
-
                     </ul>
                 </div>
                 {/* menu ends */}
@@ -40,6 +43,7 @@ export default function TopNavbar() {
                                 Login
                             </Link>
                         </li>
+
                         <li>
                             <Link className="nav-link" href="/register">
                                 Register
