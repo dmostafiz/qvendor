@@ -47,7 +47,6 @@ class RegisteredUserController extends Controller
             'phone_number' => 'required|string'
         ]);
 
-
         // dd($request->username);
 
         $user = User::create([
