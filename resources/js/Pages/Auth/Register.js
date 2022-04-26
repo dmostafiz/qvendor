@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@/Components/Button';
 import Guest from '@/Layouts/Guest';
 import Input from '@/Components/Input';
@@ -6,8 +6,9 @@ import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 import HomeLayout from './../../Layouts/HomeLayout';
+import Countries from './../../Components/Countries';
 
-export default function Register({sponsor_id}) {
+export default function Register({ sponsor_id }) {
 
     useEffect(() => {
         console.log('Sponsor ID: ', sponsor_id)
@@ -23,6 +24,8 @@ export default function Register({sponsor_id}) {
         password_confirmation: '',
     });
 
+    const [currentCountry, setCurrentCountry] = useState(null)
+
     useEffect(() => {
         return () => {
             reset('password', 'password_confirmation');
@@ -32,6 +35,14 @@ export default function Register({sponsor_id}) {
     const onHandleChange = (event) => {
         setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
     };
+
+    const handleChangeCountry = (value) => {
+        setData({ ...data, country: value })
+
+        const selectCountry = Countries.find(cty => cty.name == value)
+        setCurrentCountry(selectCountry)
+        console.log('selectCountry', selectCountry)
+    }
 
     const submit = (e) => {
         e.preventDefault();
@@ -179,15 +190,15 @@ export default function Register({sponsor_id}) {
                                                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                                                     Country
                                                 </label>
-                                
+
                                                 <select
                                                     className="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                     name="country"
                                                     value={data.country}
-                                                    onChange={onHandleChange}
+                                                    onChange={e => handleChangeCountry(e.target.value)}
                                                 >
-                                                   <option value=''>Select your country</option>
-                                                   <option>United states</option>
+                                                    <option value=''>Select your country</option>
+                                                    {Countries.map((country, index) => <option key={index}>{country.name}</option>)}
                                                 </select>
                                             </div>
 
@@ -195,15 +206,21 @@ export default function Register({sponsor_id}) {
                                                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                                                     Phone Number
                                                 </label>
-                                                <input
-                                                    className="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                                    id="phone_number"
-                                                    type="text"
-                                                    name="phone_number"
-                                                    placeholder="Enter phone no"
-                                                    value={data.phone_number}
-                                                    onChange={onHandleChange}
-                                                />
+                                                <div className='shadow-sm appearance-none border rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex items-center gap-1'>
+                                                    <div className='flex items-center gap-1'>
+                                                        <i className={`fp text-sm fp-rounded ${currentCountry?.code.toLowerCase()}`}></i>
+                                                        <span className="text-xs">{currentCountry?.dial_code}</span>
+                                                    </div>
+                                                    <input
+                                                        className="border-0 py-0 px-3 focus:ring-0"
+                                                        id="phone_number"
+                                                        type="text"
+                                                        name="phone_number"
+                                                        placeholder="Enter phone no"
+                                                        value={data.phone_number}
+                                                        onChange={onHandleChange}
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
 

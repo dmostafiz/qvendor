@@ -11,6 +11,8 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../../Argon/Assets/theme/theme.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+import "flagpack/dist/flagpack.css"
+
 // import ;
 // import "../../Argon/Assets/scss/argon-dashboard-react.scss";
 

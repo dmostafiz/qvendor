@@ -45,6 +45,7 @@
         "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
+        "flagpack": "^1.0.5",
         "react-icons": "^4.3.1"
     }
 }
