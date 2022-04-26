@@ -139,7 +139,9 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
 
 
   let logoImage = (
-    <img alt={logo.imgAlt} className={classes.logoClasses} src={'/assets/images/logo-dark.png'} />
+    <img style={{
+      width: '70%'
+    }} srcalt={logo.imgAlt} className='' src={'/assets/images/logo-dark.png'} />
   );
 
 
@@ -159,7 +161,7 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
     <>
       <Hidden smDown implementation="css">
         <Drawer variant="permanent" anchor="left" open>
-          <Box paddingBottom="1rem">{logoObject}</Box>
+          <div>{logoObject}</div>
           <List classes={{ root: classes.listRoot }}>
             {createLinks(routes)}
           </List>

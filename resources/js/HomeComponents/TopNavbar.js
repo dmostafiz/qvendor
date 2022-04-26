@@ -6,14 +6,14 @@ export default function TopNavbar() {
         <header id="dtr-header-global" className="fixed-top">
             <div className="d-flex align-items-center justify-content-between">
                 {/* header left starts */}
-                <div className="dtr-header-left">
+                <div className="dtr-header-left p-0">
 
                     <Link className="logo-default dtr-scroll-link" href="/">
-                        <img src="assets/images/logo-dark.png" alt="logo" />
+                        <img width="150px" src="/assets/images/logo-dark.png" alt="logo" />
                     </Link>
 
                     <Link className="logo-alt dtr-scroll-link" href="/">
-                        <img src="assets/images/logo-dark.png" alt="logo" />
+                        <img width="150px" src="/assets/images/logo-dark.png" alt="logo" />
                     </Link>
 
                     {/* logo on scroll ends */}

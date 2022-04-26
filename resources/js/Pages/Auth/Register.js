@@ -7,7 +7,11 @@ import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 import HomeLayout from './../../Layouts/HomeLayout';
 
-export default function Register() {
+export default function Register({sponsor_id}) {
+
+    useEffect(() => {
+        console.log('Sponsor ID: ', sponsor_id)
+    }, [])
     const { data, setData, post, processing, errors, reset } = useForm({
         sponsor_id: '',
         username: '',
@@ -182,6 +186,7 @@ export default function Register() {
                                                     value={data.country}
                                                     onChange={onHandleChange}
                                                 >
+                                                   <option value=''>Select your country</option>
                                                    <option>United states</option>
                                                 </select>
                                             </div>

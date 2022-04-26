@@ -19,9 +19,12 @@ class RegisteredUserController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('Auth/Register');
+
+        return Inertia::render('Auth/Register', [
+            'sponsor_id'=> $request->username
+        ]);
     }
 
     /**
@@ -40,14 +43,29 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'country' => 'required|string',
+            'phone_number' => 'required|string'
         ]);
+
+
+        // dd($request->username);
 
         $user = User::create([
             'username' => $request->username,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'country' => $request->country,
+            'phone_number' => $request->phone_number,
         ]);
+
+        $sponsorUser = User::where('username', $request->sponsor_id)->first();
+
+        if($sponsorUser){
+            $user->parent_id = $sponsorUser->id;
+            $user->save();
+        }
+
 
         event(new Registered($user));
 
