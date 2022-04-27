@@ -25,12 +25,12 @@ import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import Pagination from "@material-ui/lab/Pagination";
 // @material-ui/icons components
 import MoreVert from "@material-ui/icons/MoreVert";
-import DashboardLayout from '../Layouts/DashboardLayout';
+import DashboardLayout from '../../Layouts/DashboardLayout';
 
 // core components
-import Header from "../../../Argon/Components/Headers/Header.js";
+import Header from "../../../../Argon/Components/Headers/Header.js";
 
-import componentStyles from "../../../Argon/Assets/theme/views/admin/tables.js";
+import componentStyles from "../../../../Argon/Assets/theme/views/admin/tables.js";
 
 const useStyles = makeStyles(componentStyles);
 
@@ -188,7 +188,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/bootstrap.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/bootstrap.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -223,7 +223,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -233,7 +233,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -243,7 +243,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -253,7 +253,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -333,7 +333,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/angular.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/angular.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -368,7 +368,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -378,7 +378,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -388,7 +388,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -398,7 +398,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -478,7 +478,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/sketch.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/sketch.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -513,7 +513,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -523,7 +523,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -533,7 +533,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -543,7 +543,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -623,7 +623,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/react.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/react.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -658,7 +658,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -668,7 +668,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -678,7 +678,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -688,7 +688,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -768,7 +768,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/vue.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/vue.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -807,7 +807,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -817,7 +817,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -827,7 +827,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -837,7 +837,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -1003,7 +1003,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/bootstrap.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/bootstrap.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -1038,7 +1038,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -1048,7 +1048,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -1058,7 +1058,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -1068,7 +1068,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -1148,7 +1148,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/angular.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/angular.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -1183,7 +1183,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -1193,7 +1193,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -1203,7 +1203,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -1213,7 +1213,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -1293,7 +1293,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/sketch.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/sketch.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -1328,7 +1328,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -1338,7 +1338,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -1348,7 +1348,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -1358,7 +1358,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -1438,7 +1438,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/react.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/react.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -1473,7 +1473,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -1483,7 +1483,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -1493,7 +1493,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -1503,7 +1503,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />
@@ -1583,7 +1583,7 @@ const Tables = () => {
                         component={Avatar}
                         marginRight="1rem"
                         alt="..."
-                        src={require("../../../Argon/Assets/img/theme/vue.jpg").default}
+                        src={require("../../../../Argon/Assets/img/theme/vue.jpg").default}
                       />
                       <Box display="flex" alignItems="flex-start">
                         <Box fontSize=".875rem" component="span">
@@ -1622,7 +1622,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-1-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-1-800x800.jpg")
                               .default
                           }
                         />
@@ -1632,7 +1632,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-2-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-2-800x800.jpg")
                               .default
                           }
                         />
@@ -1642,7 +1642,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-3-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-3-800x800.jpg")
                               .default
                           }
                         />
@@ -1652,7 +1652,7 @@ const Tables = () => {
                           classes={{ root: classes.avatarRoot }}
                           alt="..."
                           src={
-                            require("../../../Argon/Assets/img/theme/team-4-800x800.jpg")
+                            require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg")
                               .default
                           }
                         />

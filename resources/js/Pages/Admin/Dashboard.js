@@ -26,16 +26,16 @@ import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 
 // core components
-import Header from "../../../Argon/Components/Headers/Header.js";
-import DashboardLayout from '../Layouts/DashboardLayout';
+import Header from "../../../../Argon/Components/Headers/Header.js";
+import DashboardLayout from '../../Layouts/DashboardLayout';
 import {
   chartOptions,
   parseOptions,
   chartExample1,
   chartExample2,
-} from "../../../Argon/variables/charts.js";
+} from "../../../../Argon/variables/charts.js";
 
-import componentStyles from "../../../Argon/Assets/theme/views/admin/dashboard";
+import componentStyles from "../../../../Argon/Assets/theme/views/admin/dashboard";
 
 const useStyles = makeStyles(componentStyles);
 

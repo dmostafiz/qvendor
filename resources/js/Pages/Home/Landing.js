@@ -5,7 +5,7 @@ export default function Landing() {
     return (
         <HomeLayout>
 
-            <section id="home" className="dtr-section dtr-section-with-bg dtr-hero-section-top-padding" style={{ backgroundImage: 'url(assets/images/hero-img2.jpg)' }}>
+            <section id="home" className="dtr-section dtr-section-with-bg dtr-hero-section-top-padding" style={{ backgroundImage: 'url(/assets/images/hero-img2.jpg)' }}>
                 {/* overlay */}
                 <div className="dtr-overlay dtr-overlay-white" />
                 <div className="dtr-dotted-bg z-index">
@@ -85,7 +85,7 @@ export default function Landing() {
                     <div className="row d-flex align-items-center">
                         {/*== column 1 starts ==*/}
                         <div className="col-12 col-md-6 small-device-space">
-                            <div className="blank-space-right"> <img src="assets/images/img-1.jpg" alt="image" className="dtr-xl-rounded-img" /> </div>
+                            <div className="blank-space-right"> <img src="/assets/images/img-1.jpg" alt="image" className="dtr-xl-rounded-img" /> </div>
                         </div>
                         {/*== column 1 ends ==*/}
                         {/*== column 2 starts ==*/}
@@ -169,7 +169,7 @@ export default function Landing() {
                         {/*== column 1 ends ==*/}
                         {/*== column 2 starts ==*/}
                         <div className="col-12 col-md-6 small-device-space">
-                            <div className="dtr-video-wrapper dtr-video-center dtr-video-btn-white h-100 dtr-xl-rounded" style={{ backgroundImage: 'url(assets/images/img-4.jpg)' }}>
+                            <div className="dtr-video-wrapper dtr-video-center dtr-video-btn-white h-100 dtr-xl-rounded" style={{ backgroundImage: 'url(/assets/images/img-4.jpg)' }}>
                                 {/* video button */}
                                 <a className="dtr-video-popup dtr-video-button" data-autoplay="true" data-vbtype="video" href="#"><span className="dtr-video-button-inner" /><span className="dtr-border-animation dtr-border-1" /> <span className="dtr-border-animation dtr-border-2" /> <span className="dtr-border-animation dtr-border-3" /> </a> </div>
                         </div>
@@ -184,7 +184,7 @@ export default function Landing() {
                     <div className="row d-flex align-items-center">
                         {/*== column 1 starts ==*/}
                         <div className="col-12 col-md-6">
-                            <div className="blank-space-right"> <img src="assets/images/img-3.jpg" alt="image" className="dtr-xl-rounded-img" /> </div>
+                            <div className="blank-space-right"> <img src="/assets/images/img-3.jpg" alt="image" className="dtr-xl-rounded-img" /> </div>
                         </div>
                         {/*== column 1 ends ==*/}
                         {/*== column 2 starts ==*/}

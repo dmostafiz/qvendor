@@ -19,6 +19,7 @@ import Settings from "@material-ui/icons/Settings";
 // core components
 import componentStyles from "../../Assets/theme/components/navbar-dropdown.js";
 import { Link } from "@inertiajs/inertia-react";
+import auth from './../../../resources/js/Hooks/auth'
 
 const useStyles = makeStyles(componentStyles);
 
@@ -48,13 +49,6 @@ export default function NavbarDropdown() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Typography
-        variant="h6"
-        component="h6"
-        classes={{ root: classes.menuTitle }}
-      >
-        Welcome!
-      </Typography>
       <Box
         display="flex!important"
         alignItems="center!important"
@@ -69,48 +63,8 @@ export default function NavbarDropdown() {
         />
         <span>My profile</span>
       </Box>
-      <Box
-        display="flex!important"
-        alignItems="center!important"
-        component={MenuItem}
-        onClick={handleMenuClose}
-      >
-        <Box
-          component={Settings}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight="1rem"
-        />
-        <span>Settings</span>
-      </Box>
-      <Box
-        display="flex!important"
-        alignItems="center!important"
-        component={MenuItem}
-        onClick={handleMenuClose}
-      >
-        <Box
-          component={EventNote}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight="1rem"
-        />
-        <span>Activity</span>
-      </Box>
-      <Box
-        display="flex!important"
-        alignItems="center!important"
-        component={MenuItem}
-        onClick={handleMenuClose}
-      >
-        <Box
-          component={LiveHelp}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight="1rem"
-        />
-        <span>Support</span>
-      </Box>
+
+
       <Divider component="div" classes={{ root: classes.dividerRoot }} />
       <Box
         display="flex!important"
@@ -157,7 +111,7 @@ export default function NavbarDropdown() {
             root: classes.avatarRoot,
           }}
         />
-        <Hidden smDown>Jessica Jones</Hidden>
+        <Hidden smDown>{auth().name}</Hidden>
       </Button>
       {renderMenu}
     </>

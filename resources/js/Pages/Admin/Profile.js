@@ -18,12 +18,12 @@ import Typography from "@material-ui/core/Typography";
 // @material-ui/icons components
 import LocationOn from "@material-ui/icons/LocationOn";
 import School from "@material-ui/icons/School";
-import DashboardLayout from '../Layouts/DashboardLayout';
+import DashboardLayout from '../../Layouts/DashboardLayout';
 // core components
-import UserHeader from "../../../Argon/Components/Headers/UserHeader.js";
+import UserHeader from "../../../../Argon/Components/Headers/UserHeader.js";
 
-import componentStyles from "../../../Argon/Assets/theme/views/admin/profile.js";
-import boxShadows from "../../../Argon/Assets/theme/box-shadow.js";
+import componentStyles from "../../../../Argon/Assets/theme/views/admin/profile.js";
+import boxShadows from "../../../../Argon/Assets/theme/box-shadow.js";
 
 const useStyles = makeStyles(componentStyles);
 
@@ -355,7 +355,7 @@ function Profile() {
                     <Box
                       component="img"
                       src={
-                        require("../../../Argon/Assets/img/theme/team-4-800x800.jpg").default
+                        require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg").default
                       }
                       alt="..."
                       maxWidth="180px"

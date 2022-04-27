@@ -19,7 +19,7 @@ class HandleInertiaRequests extends Middleware
     {
         $pathArr = explode('/', $request->path());
 
-        if($pathArr[0] && $pathArr[0] == 'dashboard')
+        if($pathArr[0] && $pathArr[0] == 'user')
         {
             return 'app-root';
         }
@@ -74,9 +74,8 @@ class HandleInertiaRequests extends Middleware
             },
         ]);
     }
+
     
-
-
     // public function handle(Request $request, Closure $next)
     // {
     //    $pathArr = explode('/', $request->path());

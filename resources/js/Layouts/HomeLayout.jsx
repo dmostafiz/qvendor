@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import TopNavbar from '../HomeComponents/TopNavbar';
+import { Link } from '@inertiajs/inertia-react';
 
-export default function HomeLayout({auth, children }) {
+export default function HomeLayout({ auth, children }) {
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log('Current Auth: ', auth)
     }, [])
     return (
@@ -27,7 +28,11 @@ export default function HomeLayout({auth, children }) {
                 <div className="dtr-responsive-header header-with-slick-menu fixed-top">
                     <div className="container">
                         {/* small devices logo */}
-                        <div className="dtr-responsive-header-left"> <a className="dtr-logo" href="index.html"><img src="assets/images/logo-dark.png" alt="logo" /></a> </div>
+                        <div className="dtr-responsive-header-left">
+                            <Link className="dtr-logo" href="/">
+                                <img width="120px" src="/assets/images/logo-dark.png" alt="logo" />
+                            </Link>
+                        </div>
                         {/* small devices logo ends */}
                         {/* menu button */}
                         <button id="dtr-menu-button" className="dtr-hamburger" type="button"><span className="dtr-hamburger-lines-wrapper"><span className="dtr-hamburger-lines" /></span></button>
@@ -35,7 +40,7 @@ export default function HomeLayout({auth, children }) {
                     <div className="dtr-responsive-header-menu" />
                 </div>
 
-                <TopNavbar />  
+                <TopNavbar />
 
                 <div id="dtr-main-content">
 

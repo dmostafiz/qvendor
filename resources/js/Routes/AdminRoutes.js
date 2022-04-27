@@ -23,40 +23,40 @@ import { CgUserList } from "react-icons/cg";
 import { FiUsers } from "react-icons/fi";
 
 
-var UserRoutes = [
+var AdminRoutes = [
   {
-    path: "/user/dashboard",
+    path: "/admin/dashboard",
     name: "Dashboard",
     icon: Tv,
     iconColor: "Primary",
   },
   {
-    path: "/user/announcments",
+    path: "/admin/announcments",
     name: "Announcments",
     icon: AiOutlineNotification,
     iconColor: "Warning",
   },
   {
-    path: "/user/leads",
+    path: "/admin/leads",
     name: "Leads / Contact List",
     icon: CgUserList,
     iconColor: "Info",
   },
-  // {
-  //   path: "/user/members",
-  //   name: "All Members",
-  //   icon: FiUsers,
-  //   iconColor: "WarningLight",
-  // },
-  // {
-  //   collapse: true,
-  //   path: "/user/icons",
-  //   name: "Icons",
-  //   icon: Grain,
-  //   iconColor: "Primary",
-  //   state: "CollapseState"
+  {
+    path: "/admin/members",
+    name: "All Members",
+    icon: FiUsers,
+    iconColor: "WarningLight",
+  },
+  {
+    collapse: true,
+    path: "/admin/icons",
+    name: "Icons",
+    icon: Grain,
+    iconColor: "Primary",
+    state: "CollapseState"
 
-  // },
+  },
   // {
   //   path: "/maps",
   //   name: "Maps",
@@ -66,17 +66,17 @@ var UserRoutes = [
   //
   // },
   {
-    path: "/user/user-profile",
+    path: "/admin/user-profile",
     name: "User Profile",
     icon: Person,
     iconColor: "WarningLight",
   },
-  // {
-  //   path: "/admin/tables",
-  //   name: "Tables",
-  //   icon: FormatListBulleted,
-  //   iconColor: "Error",
-  // },
+  {
+    path: "/admin/tables",
+    name: "Tables",
+    icon: FormatListBulleted,
+    iconColor: "Error",
+  },
 
   // {
   //   divider: true,
@@ -103,4 +103,4 @@ var UserRoutes = [
   //   icon: Dns,
   // },
 ];
-export default UserRoutes;
+export default AdminRoutes;

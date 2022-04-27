@@ -19,18 +19,19 @@ import componentStyles from "../../../Argon/Assets/theme/layouts/admin";
 
 import Logo from "./../../../Argon/Assets/img/brand/argon-react.png"
 import AdminFooter from '../../../Argon/Components/Footers/AdminFooter';
-import routes from '../Routes/UserRoutes'
+import AdminRoutes from '../Routes/AdminRoutes'
+import UserRoutes from '../Routes/UserRoutes'
 import NavbarDropdown from '../../../Argon/Components/Dropdowns/NavbarDropdown';
 
 
 import MasterDashboard from "./MasterDashboard";
 import { CircularProgress } from "@material-ui/core";
-
+import auth from './../Hooks/auth';
 // import routes from "./../../../routes.js";
 
 const useStyles = makeStyles(componentStyles);
 
-const DashboardLayout = ({ auth, header, children }) => {
+const DashboardLayout = ({ header, children }) => {
 
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
@@ -72,10 +73,10 @@ const DashboardLayout = ({ auth, header, children }) => {
         {/* <CssBaseline /> */}
 
         <Sidebar
-          routes={routes}
+          routes={auth().user_type == "admin" ? AdminRoutes : UserRoutes}
           
           logo={{
-            innerLink: "/dashboard",
+            innerLink: "/",
             imgSrc: Logo,
             imgAlt: "...",
           }}
@@ -97,6 +98,7 @@ const DashboardLayout = ({ auth, header, children }) => {
                       width="1.25rem!important"
                       height="1.25rem!important"
                     />
+
                   </InputAdornment>
                 }
                 labelWidth={70}

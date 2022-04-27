@@ -9,10 +9,10 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
 // core components
-import Header from "../../../Argon/Components/Headers/Header.js";
+import Header from "../../../../Argon/Components/Headers/Header.js";
 
-import componentStyles from "../../../Argon/Assets/theme/views/admin/maps.js";
-import DashboardLayout from '../Layouts/DashboardLayout';
+import componentStyles from "../../../../Argon/Assets/theme/views/admin/maps.js";
+import DashboardLayout from '../../Layouts/DashboardLayout';
 
 const useStyles = makeStyles(componentStyles);
 

@@ -14,7 +14,7 @@ export default function Register({ sponsor_id }) {
         console.log('Sponsor ID: ', sponsor_id)
     }, [])
     const { data, setData, post, processing, errors, reset } = useForm({
-        sponsor_id: '',
+        sponsor_id: sponsor_id,
         username: '',
         name: '',
         email: '',
@@ -47,7 +47,7 @@ export default function Register({ sponsor_id }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'));
+        post(route('register.post'));
     };
 
     return (
@@ -55,7 +55,7 @@ export default function Register({ sponsor_id }) {
             <Head title="Register" />
 
 
-            <section id="home" className="dtr-section dtr-section-with-bg dtr-hero-section-top-padding" style={{ backgroundImage: 'url(assets/images/hero-img2.jpg)' }}>
+            <section id="home" className="dtr-section dtr-section-with-bg dtr-hero-section-top-padding" style={{ backgroundImage: 'url(/assets/images/hero-img2.jpg)' }}>
                 {/* overlay */}
                 <div className="dtr-overlay dtr-overlay-white" />
                 <div className="dtr-dotted-bg z-index">
@@ -81,7 +81,7 @@ export default function Register({ sponsor_id }) {
 
                                 <div className="w-full">
                                     <div className="flex items-center justify-center">
-                                        <h4>Create a new account</h4>
+                                        <h4>Join the community</h4>
                                     </div>
                                     <form onSubmit={submit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
@@ -99,6 +99,7 @@ export default function Register({ sponsor_id }) {
                                                     name="sponsor_id"
                                                     placeholder="Enter sponsor id"
                                                     value={data.sponsor_id}
+                                                    readOnly={sponsor_id ? true : false}
                                                     onChange={onHandleChange}
                                                 />
                                             </div>
@@ -202,7 +203,7 @@ export default function Register({ sponsor_id }) {
                                                 </select>
                                             </div>
 
-                                            <div className="w-7/12">
+                                            {currentCountry && <div className="w-7/12">
                                                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                                                     Phone Number
                                                 </label>
@@ -221,16 +222,18 @@ export default function Register({ sponsor_id }) {
                                                         onChange={onHandleChange}
                                                     />
                                                 </div>
-                                            </div>
+                                            </div>}
+
+
                                         </div>
 
                                         <div className="flex items-center justify-between">
                                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                                                 Create account
                                             </button>
-                                            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                                            <Link href='/login' className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                                 Already have an account?
-                                            </a>
+                                            </Link>
                                         </div>
                                     </form>
                                     {/* <p className="text-center text-gray-500 text-xs">

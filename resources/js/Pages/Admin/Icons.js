@@ -12,11 +12,11 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import Tooltip from "@material-ui/core/Tooltip";
-import DashboardLayout from '../Layouts/DashboardLayout';
+import DashboardLayout from '../../Layouts/DashboardLayout';
 // core components
-import Header from "../../../Argon/Components/Headers/Header.js";
+import Header from "../../../../Argon/Components/Headers/Header.js";
 
-import componentStyles from "../../../Argon/Assets/theme/views/admin/icons.js";
+import componentStyles from "../../../../Argon/Assets/theme/views/admin/icons.js";
 
 const useStyles = makeStyles(componentStyles);
 

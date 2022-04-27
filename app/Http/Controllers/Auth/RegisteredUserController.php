@@ -22,6 +22,9 @@ class RegisteredUserController extends Controller
     public function create(Request $request)
     {
 
+        // if($request->username){
+        //     dd($request->username);
+        // }
         return Inertia::render('Auth/Register', [
             'sponsor_id'=> $request->username
         ]);

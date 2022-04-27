@@ -36,7 +36,7 @@ export default function Login({ status, canResetPassword }) {
             <Head title="Log in" />
 
 
-            <section id="home" className="dtr-section dtr-section-with-bg dtr-hero-section-top-padding" style={{ backgroundImage: 'url(assets/images/hero-img2.jpg)' }}>
+            <section id="home" className="dtr-section dtr-section-with-bg dtr-hero-section-top-padding" style={{ backgroundImage: 'url(/assets/images/hero-img2.jpg)' }}>
                 {/* overlay */}
                 <div className="dtr-overlay dtr-overlay-white" />
                 <div className="dtr-dotted-bg z-index">
