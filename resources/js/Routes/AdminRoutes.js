@@ -31,7 +31,7 @@ var AdminRoutes = [
     iconColor: "Primary",
   },
   {
-    path: "/admin/announcments",
+    path: "/admin/announcements",
     name: "Announcments",
     icon: AiOutlineNotification,
     iconColor: "Warning",
@@ -43,20 +43,20 @@ var AdminRoutes = [
     iconColor: "Info",
   },
   {
-    path: "/admin/members",
-    name: "All Members",
+    path: "/admin/users",
+    name: "Registered users",
     icon: FiUsers,
     iconColor: "WarningLight",
   },
-  {
-    collapse: true,
-    path: "/admin/icons",
-    name: "Icons",
-    icon: Grain,
-    iconColor: "Primary",
-    state: "CollapseState"
+  // {
+  //   collapse: true,
+  //   path: "/admin/icons",
+  //   name: "Icons",
+  //   icon: Grain,
+  //   iconColor: "Primary",
+  //   state: "CollapseState"
 
-  },
+  // },
   // {
   //   path: "/maps",
   //   name: "Maps",
@@ -66,17 +66,17 @@ var AdminRoutes = [
   //
   // },
   {
-    path: "/admin/user-profile",
-    name: "User Profile",
+    path: "/admin/profile",
+    name: "My Profile",
     icon: Person,
     iconColor: "WarningLight",
   },
-  {
-    path: "/admin/tables",
-    name: "Tables",
-    icon: FormatListBulleted,
-    iconColor: "Error",
-  },
+  // {
+  //   path: "/admin/tables",
+  //   name: "Tables",
+  //   icon: FormatListBulleted,
+  //   iconColor: "Error",
+  // },
 
   // {
   //   divider: true,

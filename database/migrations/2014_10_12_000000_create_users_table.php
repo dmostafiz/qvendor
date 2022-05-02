@@ -23,6 +23,11 @@ class CreateUsersTable extends Migration
             $table->string('user_type')->default('user');
             $table->string('country')->nullable();
             $table->string('phone_number')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('avatar')->nullable();
+            $table->boolean('status')->default(true);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

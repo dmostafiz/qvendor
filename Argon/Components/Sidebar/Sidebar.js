@@ -83,8 +83,21 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
         </>
       );
 
-
-      if (prop.href) {
+      if (prop.Component) {
+        return <ListItem
+          key={key}
+          classes={{
+            root:
+              classes.listItemRoot +
+              (prop.upgradeToPro
+                ? " " + classes.listItemRootUpgradeToPro
+                : ""),
+            selected: classes.listItemSelected,
+          }}
+        >
+          <prop.Component />
+        </ListItem>
+      } else if (prop.href) {
         return (
           <ListItem
             key={key}
@@ -140,7 +153,7 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
 
   let logoImage = (
     <img style={{
-      width: '70%'
+      width: '150px'
     }} srcalt={logo.imgAlt} className='' src={'/assets/images/logo-dark.png'} />
   );
 
@@ -193,7 +206,7 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
             </Container>
           </Toolbar>
         </AppBar>
-        
+
         <Divider />
 
         <Menu

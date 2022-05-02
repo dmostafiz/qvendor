@@ -27,19 +27,19 @@ const AdminFooter = () => {
           className={classes.justifyContentCenter}
         >
           <div className={classes.copyrightWrapper}>
-            © {new Date().getFullYear()}{" "}
-            <a
+            Copyrigh © getfitoils.com {new Date().getFullYear()}{" "}
+            {/* <a
               className={classes.copyrightLink}
               href="https://www.creative-tim.com?ref=adr-admin-footer"
               rel="noopener noreferrer"
               target="_blank"
             >
               Creative Tim
-            </a>
+            </a> */}
           </div>
         </Box>
 
-        <Grid
+        {/* <Grid
           item
           xl={6}
           component={Box}
@@ -101,7 +101,7 @@ const AdminFooter = () => {
               MIT License
             </ListItem>
           </Box>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
   );

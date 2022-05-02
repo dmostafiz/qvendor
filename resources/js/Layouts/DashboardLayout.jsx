@@ -27,11 +27,15 @@ import NavbarDropdown from '../../../Argon/Components/Dropdowns/NavbarDropdown';
 import MasterDashboard from "./MasterDashboard";
 import { CircularProgress } from "@material-ui/core";
 import auth from './../Hooks/auth';
+import { usePage } from "@inertiajs/inertia-react";
+import { Alert } from "@mui/material";
 // import routes from "./../../../routes.js";
+import FlashMessages from './../Components/FlashMessages';
 
 const useStyles = makeStyles(componentStyles);
 
-const DashboardLayout = ({ header, children }) => {
+const DashboardLayout = ({ title = 'Dashboard', header, children }) => {
+
 
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
@@ -70,61 +74,61 @@ const DashboardLayout = ({ header, children }) => {
 
   return (
     <Suspense fallback={<CircularProgress />}>
-        {/* <CssBaseline /> */}
+      {/* <CssBaseline /> */}
 
-        <Sidebar
-          routes={auth().user_type == "admin" ? AdminRoutes : UserRoutes}
-          
-          logo={{
-            innerLink: "/",
-            imgSrc: Logo,
-            imgAlt: "...",
-          }}
+      <Sidebar
+        routes={auth().user_type == "admin" ? AdminRoutes : UserRoutes}
 
-          dropdown={<NavbarDropdown />}
+        logo={{
+          innerLink: "/",
+          imgSrc: Logo,
+          imgAlt: "...",
+        }}
 
-          input={
-            <FormControl variant="outlined" fullWidth>
-              <InputLabel htmlFor="outlined-adornment-search-responsive">
-                Search
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-search-responsive"
-                type="text"
-                endAdornment={
-                  <InputAdornment position="end">
-                    <Box
-                      component={Search}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
-                    />
+        dropdown={<NavbarDropdown />}
 
-                  </InputAdornment>
-                }
-                labelWidth={70}
-              />
-            </FormControl>
-          }
-        />
+        input={
+          <FormControl variant="outlined" fullWidth>
+            <InputLabel htmlFor="outlined-adornment-search-responsive">
+              Search
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-search-responsive"
+              type="text"
+              endAdornment={
+                <InputAdornment position="end">
+                  <Box
+                    component={Search}
+                    width="1.25rem!important"
+                    height="1.25rem!important"
+                  />
 
-        <Box position="relative" className={classes.mainContent}>
 
-          <AdminNavbar brandText={
-            // (location.pathname)
-            'Dashboard'
-            } />
+                </InputAdornment>
+              }
+              labelWidth={70}
+            />
+          </FormControl>
+        }
+      />
 
-          {children}
+      <Box position="relative" className={classes.mainContent}>
 
-          <Container
-            maxWidth={false}
-            component={Box}
-            classes={{ root: classes.containerRoot }}
-          >
-            <AdminFooter />
-          </Container>
+        <AdminNavbar brandText={title} />
 
-        </Box>
+        {children}
+
+        <Container
+          maxWidth={false}
+          component={Box}
+          classes={{ root: classes.containerRoot }}
+        >
+          <AdminFooter />
+        </Container>
+
+      </Box>
+
+      <FlashMessages />
 
     </Suspense>
   );

@@ -21,6 +21,7 @@ import VpnKey from "@material-ui/icons/VpnKey";
 import { AiOutlineNotification } from "react-icons/ai";
 import { CgUserList } from "react-icons/cg";
 import { FiUsers } from "react-icons/fi";
+import CopyLinks from './../Components/CopyLinks';
 
 
 var UserRoutes = [
@@ -30,8 +31,9 @@ var UserRoutes = [
     icon: Tv,
     iconColor: "Primary",
   },
+
   {
-    path: "/user/announcments",
+    path: "/user/announcements",
     name: "Announcments",
     icon: AiOutlineNotification,
     iconColor: "Warning",
@@ -42,35 +44,23 @@ var UserRoutes = [
     icon: CgUserList,
     iconColor: "Info",
   },
-  // {
-  //   path: "/user/members",
-  //   name: "All Members",
-  //   icon: FiUsers,
-  //   iconColor: "WarningLight",
-  // },
-  // {
-  //   collapse: true,
-  //   path: "/user/icons",
-  //   name: "Icons",
-  //   icon: Grain,
-  //   iconColor: "Primary",
-  //   state: "CollapseState"
-
-  // },
-  // {
-  //   path: "/maps",
-  //   name: "Maps",
-  //   icon: LocationOn,
-  //   iconColor: "Warning",
-  //   component: Maps,
-  //
-  // },
   {
-    path: "/user/user-profile",
-    name: "User Profile",
+    path: "/user/profile",
+    name: "My Profile",
     icon: Person,
     iconColor: "WarningLight",
   },
+  // {
+  //   divider: true,
+  // },
+  // {
+  //   title: "Others",
+  // },
+  {
+    Component: CopyLinks,
+  },
+
+
   // {
   //   path: "/admin/tables",
   //   name: "Tables",
@@ -81,26 +71,12 @@ var UserRoutes = [
   // {
   //   divider: true,
   // },
-  // {
-  //   title: "Documentation",
-  // },
+
   // {
   //   href:
   //     "https://www.creative-tim.com/learning-lab/material-ui/overview/argon-dashboard?ref=admui-admin-sidebar",
   //   name: "Getting started",
   //   icon: FlashOn,
-  // },
-  // {
-  //   href:
-  //     "https://www.creative-tim.com/learning-lab/material-ui/colors/argon-dashboard?ref=admui-admin-sidebar",
-  //   name: "Foundation",
-  //   icon: Palette,
-  // },
-  // {
-  //   href:
-  //     "https://www.creative-tim.com/learning-lab/material-ui/alerts/argon-dashboard?ref=admui-admin-sidebar",
-  //   name: "Components",
-  //   icon: Dns,
-  // },
+  // }
 ];
 export default UserRoutes;

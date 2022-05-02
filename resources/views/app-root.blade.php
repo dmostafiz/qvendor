@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Scripts -->
-        @routes
-        
-        @inertiaHead
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-        <style>
-            .nprogress-busy{
-                z-index: 9999999 !important;
-            }
-        </style>
-    </head>
-    <body class="font-sans antialiased">
-        
-        @inertia
+    <!-- Scripts -->
+    @routes
 
-        @env ('local')
-            <script src="http://localhost:8080/js/bundle.js"></script>
-        @endenv
-    </body>
+    @inertiaHead
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <style>
+        .nprogress-busy {
+            z-index: 9999999 !important;
+        }
+
+        .MuiPaginationItem-root {
+            color: #8898aa;
+            width: 36px;
+            border: none !important;
+        }
+    
+
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+
+    @inertia
+
+    @env('local')
+    <script src="http://localhost:8080/js/bundle.js"></script>
+    @endenv
+</body>
+
+<script src="{{ mix('js/app.js') }}" defer></script>
+
 </html>

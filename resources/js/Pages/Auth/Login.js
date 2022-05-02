@@ -44,13 +44,6 @@ export default function Login({ status, canResetPassword }) {
                         {/*== row starts ==*/}
                         <div className="row d-flex align-items-center">
                             <div className="col-12 col-md-6">
-                                {/* <h3 className="dtr-mb-5">Turn $20 into $2,500+</h3>
-                                <h1 className="color-red">GET PAID AND SAVE PEOPLE MONEY ON FUEL!</h1>
-                                <ul className="dtr-list-styled dtr-mt-30 color-dark">
-                                    <li>Two Important Questions:</li>
-                                    <li><img src="assets/images/checkmark.svg" alt="image" />Would you invest $20 to make $2,500 in profit?</li>
-                                    <li><img src="assets/images/checkmark.svg" alt="image" />Do you know two other people that would do the same?</li>
-                                </ul> */}
 
                                 {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
@@ -95,10 +88,10 @@ export default function Login({ status, canResetPassword }) {
                                        
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded focus:outline-none focus:shadow-outline text-sm" type="submit">
                                                 Sign In
                                             </button>
-                                            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                                            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href={route('password.request')}>
                                                 Forgot Password?
                                             </a>
                                         </div>
@@ -120,57 +113,6 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             </section>
 
-            {/* <form onSubmit={submit}>
-                <div>
-                    <Label forInput="email" value="Email" />
-
-                    <Input
-                        type="text"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
-
-                    <Input
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        handleChange={onHandleChange}
-                    />
-                </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
-
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
-                    </label>
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <Button className="ml-4" processing={processing}>
-                        Log in
-                    </Button>
-                </div>
-            </form> */}
         </HomeLayout>
     );
 }

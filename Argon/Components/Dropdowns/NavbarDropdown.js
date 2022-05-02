@@ -55,39 +55,41 @@ export default function NavbarDropdown() {
         component={MenuItem}
         onClick={handleMenuClose}
       >
-        <Box
-          component={Person}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight="1rem"
-        />
-        <span>My profile</span>
+        <Link href={`/${auth().user_type}/profile`}>
+          <Box
+            component={Person}
+            width="1.25rem!important"
+            height="1.25rem!important"
+            marginRight="1rem"
+          />
+          <span>My profile</span>
+        </Link>
       </Box>
 
 
       <Divider component="div" classes={{ root: classes.dividerRoot }} />
-      <Box
-        display="flex!important"
-        alignItems="center!important"
-        component={MenuItem}
-        onClick={handleMenuClose}
+      <Link
+        method='post'
+        as='span'
+        href={route('logout')}
+        className={`w-full flex items-start pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 text-base font-medium focus:outline-none transition duration-150 ease-in-out`}
       >
         <Box
-          component={DirectionsRun}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight="1rem"
-        />
-        <Link
-          method='post'
-          as='span'
-          href={route('logout')}
-          className={`w-full flex items-start pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 text-base font-medium focus:outline-none transition duration-150 ease-in-out`}
+          display="flex!important"
+          alignItems="center!important"
+          component={MenuItem}
+          onClick={handleMenuClose}
         >
+          <Box
+            component={DirectionsRun}
+            width="1.25rem!important"
+            height="1.25rem!important"
+            marginRight="1rem"
+          />
           Log Out
-        </Link>
-      </Box>
-    </Menu>
+        </Box>
+      </Link>
+    </Menu >
   );
 
   return (
@@ -105,8 +107,8 @@ export default function NavbarDropdown() {
         }}
       >
         <Avatar
-          alt="..."
-          src={require("./../../Assets/img/theme/team-4-800x800.jpg").default}
+          alt={auth().name}
+          src={`/storage/profile/${auth().avatar}`}
           classes={{
             root: classes.avatarRoot,
           }}

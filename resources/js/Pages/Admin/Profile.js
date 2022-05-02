@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
@@ -16,23 +16,56 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 // @material-ui/icons components
-import LocationOn from "@material-ui/icons/LocationOn";
+// import MailOutlineIcon from "@material-ui/icons/MailOutlineIcon";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import School from "@material-ui/icons/School";
 import DashboardLayout from '../../Layouts/DashboardLayout';
 // core components
-import UserHeader from "../../../../Argon/Components/Headers/UserHeader.js";
+import AdminProfileHeader from './../../Components/AdminProfileHeader';
 
 import componentStyles from "../../../../Argon/Assets/theme/views/admin/profile.js";
 import boxShadows from "../../../../Argon/Assets/theme/box-shadow.js";
+import auth from './../../Hooks/auth';
+import axios from "axios";
+import moment from 'moment';
+import { styled } from '@mui/material/styles';
+import { Inertia } from "@inertiajs/inertia";
+import { Avatar } from "@mui/material";
+
+import ProfileDisabled from './../../Components/ProfileDisabled';
+import ProfileEditable from './../../Components/ProfileEditable';
+
+const Input = styled('input')({
+  display: 'none',
+});
 
 const useStyles = makeStyles(componentStyles);
 
-function Profile() {
+function Profile({ mode }) {
   const classes = useStyles();
   const theme = useTheme();
+
+  const [user, setUser] = useState({})
+
+  const authUser = auth()
+
+  useEffect(async () => {
+    const usr = await axios.get(`/get_user_data/${authUser.id}`)
+
+    // console.log('User PRofile: ', usr.data)
+    if (usr.data) {
+
+      setUser(usr.data)
+    }
+  }, [])
+
+  const handleImageChnage = (e) => {
+    Inertia.post('/update_profile_image', { image: e.target.files[0] }, {preserveScroll: true})
+  }
+
   return (
-    <DashboardLayout>
-      <UserHeader />
+    <DashboardLayout title='Profile'>
+      <AdminProfileHeader mode={mode} />
       {/* Page content */}
       <Container
         maxWidth={false}
@@ -41,6 +74,7 @@ function Profile() {
         classes={{ root: classes.containerRoot }}
       >
         <Grid container>
+
           <Grid
             item
             xs={12}
@@ -68,278 +102,22 @@ function Profile() {
                         variant="h3"
                         marginBottom="0!important"
                       >
-                        My Account
+                        {mode == 'edit' ? 'Update account info' : 'My Profile Info'} 
                       </Box>
                     </Grid>
-                    <Grid item xs="auto">
-                      <Box
-                        justifyContent="flex-end"
-                        display="flex"
-                        flexWrap="wrap"
-                      >
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          size="small"
-                        >
-                          Settings
-                        </Button>
-                      </Box>
-                    </Grid>
+                
                   </Grid>
                 }
                 classes={{ root: classes.cardHeaderRoot }}
               ></CardHeader>
               <CardContent>
-                <Box
-                  component={Typography}
-                  variant="h6"
-                  color={theme.palette.gray[600] + "!important"}
-                  paddingTop=".25rem"
-                  paddingBottom=".25rem"
-                  fontSize=".75rem!important"
-                  letterSpacing=".04em"
-                  marginBottom="1.5rem!important"
-                  classes={{ root: classes.typographyRootH6 }}
-                >
-                  User Information
-                </Box>
-                <div >
-                  <Grid container>
-                    <Grid item xs={12} lg={6}>
-                      <FormGroup>
-                        <FormLabel>Username</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            defaultValue="lucky.jesse"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                    <Grid item xs={12} lg={6}>
-                      <FormGroup>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="email"
-                            placeholder="jesse@example.com"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                  </Grid>
-                  <Grid container>
-                    <Grid item xs={12} lg={6}>
-                      <FormGroup>
-                        <FormLabel>First name</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            defaultValue="Lucky"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                    <Grid item xs={12} lg={6}>
-                      <FormGroup>
-                        <FormLabel>Last Name</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            defaultValue="Jesse"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                  </Grid>
-                </div>
-                <Box
-                  component={Divider}
-                  marginBottom="1.5rem!important"
-                  marginTop="1.5rem!important"
-                />
-                <Box
-                  component={Typography}
-                  variant="h6"
-                  color={theme.palette.gray[600] + "!important"}
-                  paddingTop=".25rem"
-                  paddingBottom=".25rem"
-                  fontSize=".75rem!important"
-                  letterSpacing=".04em"
-                  marginBottom="1.5rem!important"
-                  classes={{ root: classes.typographyRootH6 }}
-                >
-                  Contact Information
-                </Box>
-                <div>
-                  <Grid container>
-                    <Grid item xs={12}>
-                      <FormGroup>
-                        <FormLabel>Address</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                  </Grid>
-                  <Grid container>
-                    <Grid item xs={12} lg={4}>
-                      <FormGroup>
-                        <FormLabel>City</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            defaultValue="New York"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                    <Grid item xs={12} lg={4}>
-                      <FormGroup>
-                        <FormLabel>Country</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            defaultValue="United States"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                    <Grid item xs={12} lg={4}>
-                      <FormGroup>
-                        <FormLabel>Postal code</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            type="text"
-                            placeholder="Postal code"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                  </Grid>
-                </div>
-                <Box
-                  component={Divider}
-                  marginBottom="1.5rem!important"
-                  marginTop="1.5rem!important"
-                />
-                <Box
-                  component={Typography}
-                  variant="h6"
-                  color={theme.palette.gray[600] + "!important"}
-                  paddingTop=".25rem"
-                  paddingBottom=".25rem"
-                  fontSize=".75rem!important"
-                  letterSpacing=".04em"
-                  marginBottom="1.5rem!important"
-                  classes={{ root: classes.typographyRootH6 }}
-                >
-                  About me
-                </Box>
-                <div>
-                  <Grid container>
-                    <Grid item xs={12}>
-                      <FormGroup>
-                        <FormLabel>About me</FormLabel>
-                        <FormControl
-                          variant="filled"
-                          component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
-                        >
-                          <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
-                            component={FilledInput}
-                            autoComplete="off"
-                            multiline
-                            defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and Open Source."
-                            rows="4"
-                          />
-                        </FormControl>
-                      </FormGroup>
-                    </Grid>
-                  </Grid>
-                </div>
+
+                {mode == 'edit' ? <ProfileEditable />  : <ProfileDisabled />}
+                  
               </CardContent>
             </Card>
           </Grid>
+
           <Grid
             item
             xs={12}
@@ -353,18 +131,20 @@ function Profile() {
                 <Grid item xs={12} lg={3}>
                   <Box position="relative">
                     <Box
-                      component="img"
-                      src={
-                        require("../../../../Argon/Assets/img/theme/team-4-800x800.jpg").default
-                      }
-                      alt="..."
                       maxWidth="180px"
                       borderRadius="50%"
                       position="absolute"
                       left="50%"
                       boxShadow={boxShadows.boxShadow + "!important"}
                       className={classes.profileImage}
+                    >
+                    <Avatar
+                      alt={auth().name}
+                      src={`/storage/profile/${auth().avatar}`}
+                      sx={{ width: '180px', height: '180px' }}
                     />
+                  </Box>
+
                   </Box>
                 </Grid>
               </Box>
@@ -375,16 +155,23 @@ function Profile() {
                 paddingBottom="5rem!important"
                 paddingTop="8rem!important"
                 classes={{ root: classes.cardHeaderRootProfile }}
-
               ></Box>
-              <Box mt={8} display="flex" justifyContent="center">
-                <Button
+
+              <Box marginTop={[-8, 12]} marginBottom={[1, 1]} display="flex" justifyContent="center">
+                {/* <Button
                   variant="contained"
                   size="medium"
                   classes={{ root: classes.buttonRootDark }}
                 >
                   Change Image
-                </Button>
+                </Button> */}
+
+                <label htmlFor="contained-button-file" classes={{ root: classes.buttonRootDark }}>
+                  <Input onChange={handleImageChnage} accept="image/*" id="contained-button-file" type="file" />
+                  <Button variant="contained" component='span'>
+                    Change Image
+                  </Button>
+                </label>
               </Box>
 
               <Box
@@ -392,87 +179,12 @@ function Profile() {
                 classes={{ root: classes.ptMd4 }}
                 paddingTop="0!important"
               >
-                <Grid container>
-                  <Grid item xs={12}>
-                    <Box
-                      padding="1rem 0"
-                      justifyContent="center"
-                      display="flex"
-                      className={classes.mtMd5}
-                    >
-                      <Box
-                        textAlign="center"
-                        marginRight="1rem"
-                        padding=".875rem"
-                      >
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          22
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Friends
-                        </Box>
-                      </Box>
-                      <Box
-                        textAlign="center"
-                        marginRight="1rem"
-                        padding=".875rem"
-                      >
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          10
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Photos
-                        </Box>
-                      </Box>
-                      <Box textAlign="center" padding=".875rem">
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          89
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Comments
-                        </Box>
-                      </Box>
-                    </Box>
-                  </Grid>
-                </Grid>
+
                 <Box textAlign="center">
                   <Typography variant="h3">
-                    Jessica Jones
+                    {auth().name}
                     <Box component="span" fontWeight="300">
-                      , 27
+                      , #{auth().username}
                     </Box>
                   </Typography>
                   <Box
@@ -483,62 +195,15 @@ function Profile() {
                     alignItems="center"
                     justifyContent="center"
                   >
-                    <Box
-                      component={LocationOn}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
-                    ></Box>
-                    Bucharest, Romania
+                    {auth().email} {user.parent && ` | Sponsored by ${user.parent?.username}`}
                   </Box>
-                  <Box
-                    component={Typography}
-                    variant="h5"
-                    marginTop="3rem!important"
-                  >
-                    Solution Manager - Creative Tim Officer
-                  </Box>
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    fontSize="1rem"
-                  >
-                    <Box
-                      component={School}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
-                      marginRight=".5rem"
-                    ></Box>
-                    University of Computer Science
-                  </Box>
-                  <Box
-                    component={Divider}
-                    marginTop="1.5rem!important"
-                    marginBottom="1.5rem!important"
-                  ></Box>
 
-                  <Box
-                    component="p"
-                    fontWeight="300"
-                    lineHeight="1.7"
-                    marginBottom="1rem"
-                    fontSize="1rem"
-                  >
-                    Ryan — the name taken by Melbourne-raised, Brooklyn-based
-                    Nick Murphy — writes, performs and records all of his own
-                    music.
-                  </Box>
-                  <a
-                    href="#mui"
-                    className={classes.cardProfileLink}
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Show More
-                  </a>
                 </Box>
+
               </Box>
             </Card>
           </Grid>
+
         </Grid>
       </Container>
     </DashboardLayout>

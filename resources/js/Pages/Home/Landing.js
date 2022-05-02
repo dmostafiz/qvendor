@@ -1,7 +1,8 @@
 import React from 'react'
 import HomeLayout from '../../Layouts/HomeLayout';
+import ContactForm from './../../Components/ContactForm';
 
-export default function Landing() {
+export default function Landing({sponsor}) {
     return (
         <HomeLayout>
 
@@ -32,40 +33,7 @@ export default function Landing() {
                                     <h3 className="text-center color-white">Did You Answer Yes?!</h3>
                                     {/* form starts */}
                                     <div className="dtr-form">
-                                        <form method="post" action="#">
-                                            <fieldset>
-                                                {/* form two columns start */}
-                                                <div className="dtr-form-row dtr-form-row-2col clearfix">
-                                                    <div className="dtr-form-column">
-                                                        <p className="dtr-form-field">
-                                                            <input name="firstName" type="text" placeholder="First Name" />
-                                                        </p>
-                                                    </div>
-                                                    <div className="dtr-form-column">
-                                                        <p className="dtr-form-field">
-                                                            <input name="lastName" type="text" placeholder="Last Name" />
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                {/* form two columns ends */}
-                                                <p className="dtr-form-field">
-                                                    <input name="email" className="required email" type="text" placeholder="Email Address" />
-                                                </p>
-                                                <p className="dtr-form-field">
-                                                    <input name="phone" type="text" placeholder="Phone Number" />
-                                                </p>
-                                                <p className="dtr-form-field">
-                                                    <input name="country" type="text" placeholder="Country" />
-                                                </p>
-                                                <p className="antispam">Leave this empty: <br />
-                                                    <input name="url" />
-                                                </p>
-                                                <p>
-                                                    <button name="submit" className="dtr-btn dtr-btn-rounded btn-dark w-100" type="submit"> <i className="btn-text">I HAVE $20. SHOW ME HOW IT WORKS</i></button>
-                                                </p>
-                                                <div id="contactresult" />
-                                            </fieldset>
-                                        </form>
+                                      <ContactForm sponsor={sponsor}/>
                                     </div>
                                     {/* form ends */}
                                     {/* infoline */}

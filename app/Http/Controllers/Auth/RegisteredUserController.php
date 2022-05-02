@@ -22,11 +22,11 @@ class RegisteredUserController extends Controller
     public function create(Request $request)
     {
 
-        // if($request->username){
-        //     dd($request->username);
-        // }
+        if(!$request->uname){
+            return redirect()->to('/join/master');
+        }
         return Inertia::render('Auth/Register', [
-            'sponsor_id'=> $request->username
+            'sponsor_id'=> $request->uname
         ]);
     }
 
@@ -52,6 +52,8 @@ class RegisteredUserController extends Controller
 
         // dd($request->username);
 
+        $preAdmin = User::where('user_type', 'admin')->first();
+
         $user = User::create([
             'username' => $request->username,
             'name' => $request->name,
@@ -68,6 +70,10 @@ class RegisteredUserController extends Controller
             $user->save();
         }
 
+        if(!$preAdmin){
+            $user->user_type = 'admin';
+            $user->save();
+        }
 
         event(new Registered($user));
 

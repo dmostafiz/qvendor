@@ -228,7 +228,7 @@ export default function Register({ sponsor_id }) {
                                         </div>
 
                                         <div className="flex items-center justify-between">
-                                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded focus:outline-none focus:shadow-outline text-sm" type="submit">
                                                 Create account
                                             </button>
                                             <Link href='/login' className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">

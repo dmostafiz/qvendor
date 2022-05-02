@@ -2,6 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Announcement;
+use App\Models\Contact;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -69,9 +72,56 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'flash' => [
+                'success' => fn () => $request->session()->get('success'),
+                'info' => fn () => $request->session()->get('info'),
+                'error' => fn () => $request->session()->get('error'),
+                'warning' => fn () => $request->session()->get('warning'),
+            ],
             'ziggy' => function () {
                 return (new Ziggy)->toArray();
             },
+
+            'totalLeads' => function() {
+                return Contact::all()->count();
+            },
+
+            'newUsers' => function() {
+                $date = \Carbon\Carbon::today()->subDays(7);
+                return User::where('user_type', 'user')
+                            ->where('created_at', '>=', $date) 
+                            ->count();
+            }, 
+
+            'verifiedUsers' => function() {
+                return User::where('user_type', 'user')
+                            ->where('email_verified_at', '!=', null)
+                            ->count();
+            }, 
+
+            'announcementsCount' => function() {
+                return Announcement::all()->count();
+            },
+
+            'myAnnouncementsCount' => function() {
+                $date = \Carbon\Carbon::today()->subDays(7);
+                return Announcement::where('created_at', '>=', $date)->count();
+            },
+
+            
+            'myTotalLeads' => function(Request $request) {
+                if($request->user()){
+                    return Contact::where('user_id', $request->user()->id)->count();
+                }
+           
+            },
+
+            'mySponsors' => function(Request $request) {
+                if($request->user()){
+                    return User::where('parent_id', $request->user()->id)->count();
+                }
+            },
+
         ]);
     }
 
