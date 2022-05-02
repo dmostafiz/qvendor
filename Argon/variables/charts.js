@@ -373,6 +373,8 @@ let chartExample2 = {
       },
     },
   },
+
+  
   data: {
     labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [
