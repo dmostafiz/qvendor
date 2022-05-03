@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import TopNavbar from '../HomeComponents/TopNavbar';
-import { Link } from '@inertiajs/inertia-react';
+import { Link, usePage } from '@inertiajs/inertia-react';
 
 export default function HomeLayout({ auth, children }) {
-
+    const { flash } = usePage().props
     useEffect(() => {
         console.log('Current Auth: ', auth)
     }, [])
@@ -44,10 +44,23 @@ export default function HomeLayout({ auth, children }) {
 
                 <div id="dtr-main-content">
 
+                    <div style={{
+                        maxWidth: '1000px',
+                        paddingLeft: "20px",
+                        paddingRight: "20px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        position: "relative",
+                        top: '180px',
+                        zIndex: 999
+                    }}>
+                        {flash.error && <div className="alert alert-danger" role="alert" >
+                            {flash.error}
+                        </div>}
+                        
+                    </div>
 
                     {children}
-
-
 
                     <section id="contact" className="dtr-section dtr-section-with-bg dtr-py-100" style={{ backgroundImage: 'url(assets/images/bg-img.jpg)' }}>
                         <div className="container">

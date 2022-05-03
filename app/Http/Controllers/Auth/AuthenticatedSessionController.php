@@ -36,11 +36,10 @@ class AuthenticatedSessionController extends Controller
     {
         $user= User::where('email', $request->email)->first();
 
-        if(!$user->status){
+        if($user->status != 'active'){
             session()->flash('error', 'Your account is temporary disabled!');
             return redirect()->back();
         }
-
 
         $request->authenticate();
 

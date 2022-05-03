@@ -188,6 +188,9 @@ require __DIR__.'/UserRoutes.php';
 require __DIR__.'/auth.php';
 
 Route::get('/{uname?}', function (Request $request) {
+    
+    return redirect()->to('/login');
+
     if(!$request->uname){
         return redirect()->to('/master');
     }
