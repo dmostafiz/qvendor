@@ -157,7 +157,6 @@ Route::middleware(['auth', 'verified', 'isAdmin'])
 
         $blk = 'blocked';
         if($request->do == 'block'){ 
-
             $user->status = false;
         }elseif($request->do == 'unblock'){
             $blk = 'unblocked';

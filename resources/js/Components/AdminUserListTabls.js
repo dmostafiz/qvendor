@@ -145,7 +145,7 @@ export default function AdminUserListTabls({ users }) {
                             </TableCell>
 
                             <TableCell classes={{ root: classes.tableCellRoot }}>
-                                {user.status ? <span style={{ color: 'green' }}>Active</span> : <span style={{ color: 'red' }}>Blocked</span>}
+                                {user.status === 1 ? <span style={{ color: 'green' }}>Active</span> : <span style={{ color: 'red' }}>Blocked</span>}
                             </TableCell>
 
                             <TableCell
@@ -157,7 +157,7 @@ export default function AdminUserListTabls({ users }) {
                                     <RemoveRedEyeIcon color="info" />
                                 </IconButton>
 
-                                {user.status
+                                {user.status === 1
                                     ?
                                     <IconButton onClick={() => Inertia.post('/admin/block_user', { userId: user.id, do: 'block' }, { preserveScroll: true })} color="danger" title="Block">
                                         <BlockIcon color="warning" />
