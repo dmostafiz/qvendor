@@ -66,7 +66,7 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
                     {new Date().getFullYear()} stats
                   </Box>
                 }
-                subheader="My leads"
+                subheader="CONTACTS"
                 classes={{ root: classes.cardHeaderRoot }}
                 titleTypographyProps={{
                   component: Box,
@@ -92,9 +92,9 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
                         labels: leadsMonth,
                         datasets: [
                           {
-                            label: "Sales",
+                            label: "Contacts",
                             data: leadsDataCount,
-                            maxBarThickness: 20,
+                            maxBarThickness: 30,
                           },
                         ],
                       }
@@ -108,7 +108,7 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
                                 callback: function (value) {
                                   if (!(value % 10)) {
                                     //return '$' + value + 'k'
-                                    return value + ' Leads';
+                                    return value + ' Contacts';
                                   }
                                 },
                               },

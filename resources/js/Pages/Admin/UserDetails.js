@@ -194,25 +194,7 @@ function UserDetails({ mode, user }) {
                           Contacts
                         </Box>
                       </Box>
-                      <Box textAlign="center" padding=".875rem">
-                        <Box
-                          component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
-                        >
-                          89
-                        </Box>
-                        <Box
-                          component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
-                        >
-                          Sponsors
-                        </Box>
-                      </Box>
+
                     </Box>
                   </Grid>
                 </Grid>

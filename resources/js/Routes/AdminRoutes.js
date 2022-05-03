@@ -38,7 +38,7 @@ var AdminRoutes = [
   },
   {
     path: "/admin/leads",
-    name: "Leads / Contact List",
+    name: "Contact List",
     icon: CgUserList,
     iconColor: "Info",
   },

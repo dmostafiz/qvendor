@@ -44,7 +44,7 @@ const HeaderAdmin = () => {
             <Grid container>
               <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
-                  subtitle="Leads / Contacts"
+                  subtitle="Contacts"
                   title={totalLeads}
                   icon={InsertChartOutlined}
                   color="bgError"

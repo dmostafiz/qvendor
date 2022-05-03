@@ -29,7 +29,7 @@ const Leads = ({ leads }) => {
   const classes = useStyles();
 
   return (
-    <DashboardLayout title='Leads'>
+    <DashboardLayout title='Contact List'>
       <HeaderAdmin />
       {/* Page content */}
       <Container

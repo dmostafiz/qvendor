@@ -29,7 +29,7 @@ const Leads = ({ leads }) => {
 
 
   return (
-    <DashboardLayout title='Leads'>
+    <DashboardLayout title='Contact List'>
       <HeaderUser />
       {/* Page content */}
       <Container

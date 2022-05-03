@@ -44,28 +44,28 @@ const HeaderUser = () => {
             <Grid container>
               <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
-                  subtitle="My Leads"
+                  subtitle="My Contacts"
                   title={myTotalLeads}
                   icon={InsertChartOutlined}
                   color="bgError"
                 />
               </Grid>
-              <Grid item xl={3} lg={6} xs={12}>
+              {/* <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="My Sponsors"
                   title={mySponsors}
                   icon={GroupAdd}
                   color="bgWarning"
                 />
-              </Grid>
-              <Grid item xl={3} lg={6} xs={12}>
+              </Grid> */}
+              {/* <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="Verified Users"
                   title={verifiedUsers}
                   icon={VerifiedUserIcon}
                   color="bgWarningLight"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="Announcements"

@@ -40,7 +40,7 @@ var UserRoutes = [
   },
   {
     path: "/user/leads",
-    name: "Leads / Contact List",
+    name: "Contact List",
     icon: CgUserList,
     iconColor: "Info",
   },
