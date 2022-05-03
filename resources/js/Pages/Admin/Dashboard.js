@@ -56,7 +56,7 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
         marginTop="-6rem"
         classes={{ root: classes.containerRoot }}
       >
-        <Grid container>
+        {/* <Grid container>
 
           <Grid item xs={12} xl={12}>
             <Card classes={{ root: classes.cardRoot }}>
@@ -136,7 +136,7 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
               </CardContent>
             </Card>
           </Grid>
-        </Grid>
+        </Grid> */}
 
         <Box height={20}></Box>
 
@@ -169,7 +169,7 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
 
         <Box height={20}></Box>
 
-        <Card classes={{ root: classes.cardRoot }}>
+        {/* <Card classes={{ root: classes.cardRoot }}>
           <CardHeader
             className={classes.cardHeader}
             title="Contact list"
@@ -177,10 +177,6 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
               component: Box,
               marginBottom: "0!important",
               variant: "h3",
-
-
-
-
             }}
           ></CardHeader>
 
@@ -197,7 +193,7 @@ function Dashboard({ users, leads, leadsMonth, leadsDataCount }) {
               path='/admin/leads'
             />
           </Box>
-        </Card>
+        </Card> */}
 
       </Container>
     </DashboardLayout>

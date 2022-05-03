@@ -36,12 +36,12 @@ var AdminRoutes = [
     icon: AiOutlineNotification,
     iconColor: "Warning",
   },
-  {
-    path: "/admin/leads",
-    name: "Contact List",
-    icon: CgUserList,
-    iconColor: "Info",
-  },
+  // {
+  //   path: "/admin/leads",
+  //   name: "Contact List",
+  //   icon: CgUserList,
+  //   iconColor: "Info",
+  // },
   {
     path: "/admin/users",
     name: "Registered users",
