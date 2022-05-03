@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('zip')->nullable();
             $table->string('avatar')->nullable();
-            $table->boolean('status')->default(true);
+            $table->string('status')->default('active');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

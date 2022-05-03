@@ -157,10 +157,10 @@ Route::middleware(['auth', 'verified', 'isAdmin'])
 
         $blk = 'blocked';
         if($request->do == 'block'){ 
-            $user->status = false;
+            $user->status = 'blocked';
         }elseif($request->do == 'unblock'){
             $blk = 'unblocked';
-            $user->status = true;
+            $user->status = 'active';
         }
 
         $user->save();
